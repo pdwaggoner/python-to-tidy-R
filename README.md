@@ -43,3 +43,20 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 | **Map Over List Column**    | `df['new_col'] = df['list_col'].apply(lambda x: [your_function(i) for i in x])` | `data %>% mutate(new_col = map(list_col, ~map(your_function, .)))` |
 | **Map with Anonymous Function** | - | `data %>% mutate(new_col = map_dbl(col, ~your_function(.)))` |
 | **Map Multiple Columns**    | `df['new_col'] = df.apply(lambda row: your_function(row['col1'], row['col2']), axis=1)` | `data %>% mutate(new_col = pmap_dbl(list(col1, col2), ~your_function(...)))` |
+
+## Iteration Over Lists
+
+| Task / Operation                  | Python (Pandas)                          | Tidyverse (dplyr and purrr)               |
+|-----------------------------------|-----------------------------------------|-------------------------------------------|
+| **Map Function Across List Column**| `df['new_col'] = df['list_col'].apply(lambda x: [your_function(i) for i in x])` | `data %>% mutate(new_col = map(list_col, ~map(your_function, .)))` |
+| **Nested Map in List Column**     | `df['new_col'] = df['list_col'].apply(lambda x: [your_function(i) for i in x])` | `data %>% mutate(new_col = map(list_col, ~map(your_function, .)))` |
+| **Nested Map Across Columns**     | -                                       | `data %>% mutate(new_col = map2(list(col1, col2), ~map(your_function, .)))` |
+| **Nested Map Within List Column** | -                                       | `data %>% mutate(new_col = map(list_col, ~map(your_function, .)))` |
+| **Map Across Rows with Nested Map**| -                                     | `data %>% mutate(new_col = pmap(list(col1, col2), ~list(your_function(.x), your_function(.y))))` |
+| **Nested Map Within Nested List**   | -                                       | `data %>% mutate(new_col = map(list(list_col), ~map(your_function, .)))` |
+| **Nested Map Across List of Lists** | `df['new_col'] = df['list_col'].apply(lambda x: [list(map(your_function, i)) for i in x])` | `data %>% mutate(new_col = map2(list(list_col1, list_col2), ~map2(your_function1, your_function2, .x, .y)))` |
+| **Nested Map Across Rows and Lists**| -                                     | `data %>% mutate(new_col = pmap(list(col1, col2, col3), ~list(your_function(.x), your_function(.y), your_function(.z))))` |
+| **Map and Reduce Across List**      | `df['new_col'] = df['list_col'].apply(lambda x: reduce(your_function, x))` | `data %>% mutate(new_col = map(list_col, ~reduce(your_function, .)))` |
+| **Map and Reduce Across Rows**      | `df['new_col'] = df.apply(lambda row: reduce(your_function, row[['col1', 'col2']]), axis=1)` | `data %>% mutate(new_col = pmap(list(col1, col2), ~reduce(your_function, .)))` |
+
+
