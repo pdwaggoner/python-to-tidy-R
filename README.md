@@ -124,3 +124,32 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 | **Model Interpretation**        | `SHAP`, `LIME`, `ELI5`, etc.         | `DALEX`, `iml`, `iBreakDown`, `lime`, etc. |
 | **Model Deployment in Production** | Containers, cloud platforms (e.g., Docker, Kubernetes, AWS SageMaker) | Containers, Shiny, Plumber, APIs, cloud platforms |
 
+## Network Modeling / Dynamics
+
+| Task / Operation                | Python (NetworkX)                    | R (various packages)                    |
+|---------------------------------|--------------------------------------|----------------------------------------|
+| **Network Creation**            | `G = nx.Graph()`, `G.add_node()`, `G.add_edge()` | `igraph::graph()`, `add_vertices()`, `add_edges()` |
+| **Node and Edge Attributes**    | `G.nodes[node]['attribute'] = value`, `G.edges[edge]['attribute'] = value` | `V(graph)$attribute <- value`, `E(graph)$attribute <- value` |
+| **Network Visualization**       | `nx.draw(G)`, `matplotlib` for customization | `plot(graph)`, `igraph`, `ggplot2`, `visNetwork`, etc. |
+| **Network Measures**            | `nx.degree_centrality(G)`, `nx.betweenness_centrality(G)`, `nx.clustering(G)`, etc. | `degree()`, `betweenness()`, `transitivity()`, etc. |
+| **Community Detection**         | `community.detect()` (e.g., Louvain, Girvan-Newman) | `cluster_walktrap()`, `cluster_fast_greedy()`, `cluster_leading_eigen()`, etc. |
+| **Link Prediction**             | `link_prediction.method()` (e.g., Common Neighbors, Jaccard Coefficient) | `link_prediction.method()` (e.g., Adamic-Adar, Preferential Attachment) |
+| **Network Filtering/Selection** | `G.subgraph(nodes)`                | `subgraph(graph, vertices)`            |
+| **Network Embedding**           | `node2vec`, `GraphSAGE`, etc.        | `walktrap.community`, `fastgreedy.community`, etc. |
+| **Network Simulation**          | `nx.erdos_renyi_graph()`, `nx.watts_strogatz_graph()`, etc. | `igraph::erdos.renyi.game()`, `igraph::watts.strogatz.game()`, etc. |
+| **Network Analysis Pipelines**  | Custom pipelines using NetworkX, Pandas, and other libraries | Custom pipelines using igraph, dplyr, and other packages |
+| **Dynamic Network Analysis**    | `dynetx` for dynamic networks       | `tsna` for temporal networks, `dyngraph` for dynamic graphs, etc. |
+| **Geospatial Network Analysis** | `osmnx` for urban network analysis  | `stplanr` for transport planning, `spatnet` for spatial network analysis, etc. |
+| **Network Modeling for Machine Learning** | Integration with scikit-learn, PyTorch, etc. | Integration with caret, glmnet, keras, etc. |
+| **Community Visualization**      | Visualization of detected communities using network layouts | `igraph::plot.igraph()` with community coloring |
+| **Path Analysis**               | Shortest paths, k-shortest paths, and all simple paths | `get.shortest.paths()`, `all.simple.paths()` |
+| **Centrality Analysis**         | Closeness centrality, eigenvector centrality, Katz centrality, etc. | `closeness()`, `eigen_centrality()`, `katz_centrality()`, etc. |
+| **Structural Role Analysis**    | Structural equivalence, equivalence-based roles | `structural_equivalence()`, `role_equiv()`, etc. |
+| **Network Robustness Analysis**  | Network attack simulations, robustness metrics | `robustness()` function, `remove_vertices()`, etc. |
+| **Temporal Network Analysis**   | Temporal networks, evolving networks | `dynnet` package for dynamic networks, temporal extensions of `igraph` functions |
+| **Multiplex Network Analysis**  | Analyzing multiple layers of networks | `multiplex` package for multilayer networks, `mgm` package for multilayer graphical models |
+| **Network Alignment**           | Aligning nodes in two or more networks | `netAlign` package for network alignment, `gmatch` package for graph matching |
+| **Dynamic Community Detection**  | Detecting evolving communities over time | `dynCOMM` for dynamic community detection |
+| **Network Generative Models**   | Generating networks from various models (e.g., ER, BA, etc.) | `igraph::sample_gnm()`, `igraph::sample_degseq()`, etc. |
+| **Geospatial Network Analysis** | Geospatial network analysis and routing | `stplanr` for transport planning, `spatnet` for spatial network analysis, etc. |
+| **Network Modeling for Machine Learning** | Integrating network data with machine learning libraries | Combining `igraph` or custom network features with caret, glmnet, keras, etc. |
