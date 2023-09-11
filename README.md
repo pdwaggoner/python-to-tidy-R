@@ -12,7 +12,7 @@ This is just a start. **Please feel free to directly contribute or revise via pu
 - [String Operations](#String-Operations)
 - [Modeling and Machine Learning](#Modeling-and-Machine-Learning)
 - [Network Modeling and Dynamics](#Network-Modeling-and-Dynamics)
-- [Parallel Computing](./Parallel Computing.md)
+- [Parallel Computing](https://github.com/pdwaggoner/python-to-tidy-R/blob/main/Parallel%20Computing.md)
 
 ----
 
