@@ -112,14 +112,15 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 | **Model Export/Serialization**   | `joblib` or `pickle`                  | `saveRDS` or other formats            |
 | **Deploying Models**            | Web frameworks (e.g., Flask, Django)  | Web frameworks (e.g., Shiny, Plumber) |
 | **Batch Scoring**               | Scripting or automation tools         | R batch processing                    |
-| **Feature Scaling/Normalization**| `StandardScaler()`, `MinMaxScaler()`, etc. | `preprocess$scaling`, `preprocess$center` |
-| **Feature Selection with L1 Regularization** | `SelectFromModel()`            | `glmnet()`                            |
-| **Handling Imbalanced Data**    | `imbalanced-learn` package            | `caret::train()` with `weights` or `sampling` |
+| **Feature Scaling/Normalization**| `StandardScaler()`, `MinMaxScaler()`, etc. | `scale()`, `normalize()`, etc.       |
+| **Feature Selection with L1 Regularization** | `SelectFromModel()`, `Lasso()`  | `glmnet()`, `cv.glmnet()`            |
+| **Handling Imbalanced Data**    | `RandomUnderSampler()`, `SMOTE()`, etc. | `caret::train()` with `weights` or `sampling` |
 | **Model Evaluation Metrics**    | `classification_report()`, `confusion_matrix()`, `mean_squared_error()`, etc. | `confusionMatrix()`, `postResample()`, `RMSE`, etc. |
-| **Feature Importance**          | `.feature_importances_` (Random Forest, etc.) | `varImp()`                             |
-| **Model Persistence**           | `joblib`, `pickle`, `sklearn.externals` | `saveRDS`, `save`                      |
+| **Feature Importance**          | `.feature_importances_` (Random Forest, etc.) | `varImp()`, `vip()`, etc.         |
+| **Model Persistence**           | `joblib`, `pickle`, `sklearn.externals` | `saveRDS`, `save()`, `serialize()`, etc. |
 | **Time Series Forecasting**     | `Prophet`, `ARIMA`, `ExponentialSmoothing`, etc. | `forecast`, `prophet`, `auto.arima`, etc. |
-| **Natural Language Processing (NLP)** | `nltk`, `spaCy`, `textblob`, etc. | `tm`, `quanteda`, `udpipe`, etc.     |
-| **Deep Learning**               | `Keras`, `TensorFlow`, `PyTorch`, etc. | `keras`, `tensorflow`, `torch`, etc. |
-| **Model Interpretation**        | `SHAP`, `LIME`, `ELI5`, etc.         | `DALEX`, `iml`, `iBreakDown`, etc.    |
+| **Natural Language Processing (NLP)** | `nltk`, `spaCy`, `textblob`, etc. | `tm`, `quanteda`, `udpipe`, `tm.plugin.webmining`, etc. |
+| **Deep Learning**               | `Keras`, `TensorFlow`, `PyTorch`, etc. | `keras`, `tensorflow`, `torch`, `mxnet`, etc. |
+| **Model Interpretation**        | `SHAP`, `LIME`, `ELI5`, etc.         | `DALEX`, `iml`, `iBreakDown`, `lime`, etc. |
 | **Model Deployment in Production** | Containers, cloud platforms (e.g., Docker, Kubernetes, AWS SageMaker) | Containers, Shiny, Plumber, APIs, cloud platforms |
+
