@@ -43,7 +43,7 @@ This is just a start. **Please feel free to directly contribute or revise via pu
 
 ## Joining Data
 
-This is the only table that includes SQL given that most of the R/`dplyr` operations were patterns and named after many SQL operations.
+This is the only table that includes SQL given that most of the R/`dplyr` operations were patterned and named after many SQL operations.
 
 | Join Type       | SQL                                      | Python (Pandas)                         | R (dplyr)                              |
 |-----------------|------------------------------------------|----------------------------------------|----------------------------------------|
