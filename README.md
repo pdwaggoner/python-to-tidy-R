@@ -10,8 +10,8 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 - [Iteration](#Iteration)
 - [Iteration Over Lists](#Iteration-Over-Lists)
 - [String Operations](#String-Operations)
-- [Modeling / Machine Learning](#Modeling---Machine-Learning)
-- [Network Modeling / Dynamics](#Network-Modeling---Dynamics)
+- [Modeling and Machine Learning](#Modeling-and-Machine-Learning)
+- [Network Modeling and Dynamics](#Network-Modeling-and-Dynamics)
 
 ----
 
@@ -91,7 +91,7 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 | **Remove Punctuation**                | -                                      | `data %>% mutate(new_col = str_remove_all(col, '[[:punct:]]'))` |
 | **String Encoding/Decoding**          | -                                      | `data %>% mutate(new_col = str_encode(col, to = 'UTF-8'))` |
 
-## Modeling / Machine Learning
+## Modeling and Machine Learning
 
 | Task / Operation              | Python (scikit-learn)                   | R (various packages)                    |
 |-------------------------------|----------------------------------------|----------------------------------------|
@@ -132,7 +132,7 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 | **Model Interpretation**        | `SHAP`, `LIME`, `ELI5`, etc.         | `DALEX`, `iml`, `iBreakDown`, `lime`, etc. |
 | **Model Deployment in Production** | Containers, cloud platforms (e.g., Docker, Kubernetes, AWS SageMaker) | Containers, Shiny, Plumber, APIs, cloud platforms |
 
-## Network Modeling / Dynamics
+## Network Modeling and Dynamics
 
 | Task / Operation                | Python (NetworkX)                    | R (various packages)                    |
 |---------------------------------|--------------------------------------|----------------------------------------|
