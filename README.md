@@ -7,7 +7,7 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 
 ----
 
-Key tasks:
+## Key tasks
 
 | Task / Operation         | Python (Pandas)                       | Tidyverse (dplyr, ggplot2)         |
 |-------------------------|--------------------------------------|-----------------------------------|
@@ -31,14 +31,15 @@ Key tasks:
 | **Rename Columns**      | `df.rename(columns={'old_col': 'new_col'})` | `data %>% rename(new_col = old_col)` |
 | **Summary Statistics**  | `df.describe()`                      | `data %>% summary()`              |
 
-Iteration:
+## Iteration
 
 | Task / Operation            | Python (Pandas)                       | Tidyverse (dplyr and purrr)       |
 |-----------------------------|--------------------------------------|-----------------------------------|
 | **Iterate Over Rows**       | `for index, row in df.iterrows():`   | `data %>% rowwise() %>% mutate(new_col = your_function(col))` |
 |                             | `    print(row['col1'], row['col2'])` |                                       |
-| **Map Function to Column**  | `df['new_col'] = df['col'].apply(your_function)` | `data %>% mutate(new_col = map_dbl(col, your_function))` |
-| **Apply Function to Column**| `df['new_col'] = your_function(df['col'])` | `data %>% mutate(new_col = your_function(col))` |
-| **Group and Map**           | `for group, group_df in df.groupby('group_col'):` | `data %>% group_by(group_col) %>% nest(data = .) %>% mutate(new_col = map(data, your_function))` |
-| **Map Over List Column**    | `df['new_col'] = df['list_col'].apply(lambda x: [your_function(i) for i in x])` | `data %>% mutate(new_col = map(list_col, ~map(your_function, .)))` |
-
+| **Map Function to Column**  | `df['new_col'] = df['col'].apply(your_function)` | `data |> mutate(new_col = map_dbl(col, your_function))` |
+| **Apply Function to Column**| `df['new_col'] = your_function(df['col'])` | `data |> mutate(new_col = your_function(col))` |
+| **Group and Map**           | `for group, group_df in df.groupby('group_col'):` | `data |> group_by(group_col) |> nest(data = .) |> mutate(new_col = map(data, your_function))` |
+| **Map Over List Column**    | `df['new_col'] = df['list_col'].apply(lambda x: [your_function(i) for i in x])` | `data |> mutate(new_col = map(list_col, ~map(your_function, .)))` |
+| **Map with Anonymous Function** | - | `data |> mutate(new_col = map_dbl(col, ~your_function(.)))` |
+| **Map Multiple Columns**    | `df['new_col'] = df.apply(lambda row: your_function(row['col1'], row['col2']), axis=1)` | `data |> mutate(new_col = pmap_dbl(list(col1, col2), ~your_function(...)))` |
