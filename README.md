@@ -83,3 +83,43 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 | **Remove Punctuation**                | -                                      | `data %>% mutate(new_col = str_remove_all(col, '[[:punct:]]'))` |
 | **String Encoding/Decoding**          | -                                      | `data %>% mutate(new_col = str_encode(col, to = 'UTF-8'))` |
 
+## Modeling / Machine Learning
+
+| Task / Operation              | Python (scikit-learn)                   | R (various packages)                    |
+|-------------------------------|----------------------------------------|----------------------------------------|
+| **Data Preprocessing**        | `from sklearn.preprocessing import ...`  | `library(caret)`                       |
+|                               | `from sklearn.pipeline import Pipeline` | `library(glmnet)`                      |
+|                               | `preprocessor = ...`                  | `preprocess <- preProcess(data, ...)`   |
+| **Feature Scaling**           | `StandardScaler()`                     | `preprocess$scaling`                    |
+| **Feature Selection**         | `SelectKBest()`                        | `caret::createFolds()`                  |
+| **Data Splitting**            | `train_test_split()`                   | `createDataPartition()`                 |
+| **Model Initialization**      | `model = ...()`                        | `model <- ...()`                       |
+| **Model Training**            | `model.fit(X_train, y_train)`          | `model <- train(y ~ ., data = data)`   |
+| **Model Prediction**          | `y_pred = model.predict(X_test)`        | `y_pred <- predict(model, newdata)`    |
+| **Model Evaluation**          | `accuracy_score(y_test, y_pred)`       | `confusionMatrix(y_pred, y_true)`      |
+| **Hyperparameter Tuning**     | `GridSearchCV()`                       | `tuneGrid(...)`                        |
+| **Cross-Validation**          | `cross_val_score()`                    | `trainControl(method = "cv")`           |
+| **Model Pipelining**          | `pipeline = Pipeline(steps=[('preprocessor', preprocessor), ('model', model)])` | `model <- train(y ~ ., data = data, method = model, trControl = trainControl(method = "cv"))` |
+| **Feature Engineering**         | `from sklearn.preprocessing import ...` | `library(caret)`                     |
+|                                 | Custom feature transformers          | Custom feature transformers           |
+| **Handling Missing Data**       | `SimpleImputer()`                     | `preprocess$impute`                   |
+| **Encoding Categorical Data**   | `OneHotEncoder()`                     | `dummyVars()`                        |
+| **Dimensionality Reduction**    | `PCA()`                               | `preprocess$reduce`                   |
+| **Model Selection**             | `GridSearchCV()`                      | `caret::train()`                      |
+| **Ensemble Learning**           | Various ensemble methods              | `caret::train()` with `method="stack"` |
+| **Regularization**              | Lasso, Ridge, Elastic Net, etc.       | `glmnet()`                            |
+| **Model Interpretability**      | SHAP, Lime, etc.                      | DALEX, iml, etc.                      |
+| **Model Export/Serialization**   | `joblib` or `pickle`                  | `saveRDS` or other formats            |
+| **Deploying Models**            | Web frameworks (e.g., Flask, Django)  | Web frameworks (e.g., Shiny, Plumber) |
+| **Batch Scoring**               | Scripting or automation tools         | R batch processing                    |
+| **Feature Scaling/Normalization**| `StandardScaler()`, `MinMaxScaler()`, etc. | `preprocess$scaling`, `preprocess$center` |
+| **Feature Selection with L1 Regularization** | `SelectFromModel()`            | `glmnet()`                            |
+| **Handling Imbalanced Data**    | `imbalanced-learn` package            | `caret::train()` with `weights` or `sampling` |
+| **Model Evaluation Metrics**    | `classification_report()`, `confusion_matrix()`, `mean_squared_error()`, etc. | `confusionMatrix()`, `postResample()`, `RMSE`, etc. |
+| **Feature Importance**          | `.feature_importances_` (Random Forest, etc.) | `varImp()`                             |
+| **Model Persistence**           | `joblib`, `pickle`, `sklearn.externals` | `saveRDS`, `save`                      |
+| **Time Series Forecasting**     | `Prophet`, `ARIMA`, `ExponentialSmoothing`, etc. | `forecast`, `prophet`, `auto.arima`, etc. |
+| **Natural Language Processing (NLP)** | `nltk`, `spaCy`, `textblob`, etc. | `tm`, `quanteda`, `udpipe`, etc.     |
+| **Deep Learning**               | `Keras`, `TensorFlow`, `PyTorch`, etc. | `keras`, `tensorflow`, `torch`, etc. |
+| **Model Interpretation**        | `SHAP`, `LIME`, `ELI5`, etc.         | `DALEX`, `iml`, `iBreakDown`, etc.    |
+| **Model Deployment in Production** | Containers, cloud platforms (e.g., Docker, Kubernetes, AWS SageMaker) | Containers, Shiny, Plumber, APIs, cloud platforms |
