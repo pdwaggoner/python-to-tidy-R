@@ -41,6 +41,7 @@ In R, the closest equivalent to the parallel computing library for Python, `dask
 
 ```
 library(future)
+
 plan(multiprocess)  # Use multiple CPU cores
 result <- future_lapply(my_data, function(x) your_function(x))
 ```
@@ -49,6 +50,7 @@ result <- future_lapply(my_data, function(x) your_function(x))
 
 ```
 library(doParallel)
+
 cl <- makeCluster(4)  # Create a cluster with 4 cores
 registerDoParallel(cl)
 result <- foreach(i = 1:length(my_data), .combine = c) %dopar% {
@@ -61,6 +63,7 @@ stopCluster(cl)
 
 ```
 library(parallel)
+
 cl <- makeCluster(4)
 result <- parLapply(cl, my_data, function(x) your_function(x))
 stopCluster(cl)
@@ -70,6 +73,7 @@ stopCluster(cl)
 
 ```
 library(SparkR)
+
 sparkR.session()
 df <- createDataFrame(my_data)
 result <- collect(select(filter(df, condition), columns))
