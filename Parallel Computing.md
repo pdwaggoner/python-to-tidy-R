@@ -1,3 +1,5 @@
+# Parallel Computing in Python and R
+
 In the spirit of the repo, I wanted to include a bit of an extended look at parallel computing. In Python, this usually done via `dask`. There are several options for translating these to R, which are presented after the brief Dask example following. 
 
 ## In Python
