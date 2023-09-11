@@ -59,4 +59,27 @@ This is just a start. **Please feel free to directly contirbute via pulls or iss
 | **Map and Reduce Across List**      | `df['new_col'] = df['list_col'].apply(lambda x: reduce(your_function, x))` | `data %>% mutate(new_col = map(list_col, ~reduce(your_function, .)))` |
 | **Map and Reduce Across Rows**      | `df['new_col'] = df.apply(lambda row: reduce(your_function, row[['col1', 'col2']]), axis=1)` | `data %>% mutate(new_col = pmap(list(col1, col2), ~reduce(your_function, .)))` |
 
+## String Operations
+
+| Task / Operation               | Python (Pandas)                    | Tidyverse (dplyr and stringr)            |
+|--------------------------------|-----------------------------------|-----------------------------------------|
+| **String Length**              | `df['col'].str.len()`             | `data |> mutate(new_col = str_length(col))` |
+| **Concatenate Strings**        | `df['new_col'] = df['col1'] + df['col2']` | `data |> mutate(new_col = str_c(col1, col2))` |
+| **Split Strings**              | `df['col'].str.split(', ')`      | `data |> mutate(new_col = str_split(col, ', '))` |
+| **Substring**                  | `df['col'].str.slice(0, 5)`      | `data |> mutate(new_col = str_sub(col, 1, 5))` |
+| **Replace Substring**          | `df['col'].str.replace('old', 'new')` | `data |> mutate(new_col = str_replace(col, 'old', 'new'))` |
+| **Uppercase / Lowercase**      | `df['col'].str.upper()`           | `data |> mutate(new_col = str_to_upper(col))` |
+|                               | `df['col'].str.lower()`           | `data |> mutate(new_col = str_to_lower(col))` |
+| **Strip Whitespace**           | `df['col'].str.strip()`           | `data |> mutate(new_col = str_squish(col))` |
+| **Check for Substring**        | `df['col'].str.contains('pattern')` | `data |> mutate(new_col = str_detect(col, 'pattern'))` |
+| **Count Substring Occurrences** | `df['col'].str.count('pattern')`  | `data |> mutate(new_col = str_count(col, 'pattern'))` |
+| **Find First Occurrence of Substring**| `df['col'].str.find('pattern')`        | `data |> mutate(new_col = str_locate(col, 'pattern')[, 1])` |
+| **Extract Substring with Regex**      | `df['col'].str.extract(r'(\d+)')`      | `data |> mutate(new_col = str_extract(col, '(\\d+)'))` |
+| **Remove Duplicates in Strings**      | -                                      | `data |> mutate(new_col = str_unique(col))` |
+| **Pad Strings**                       | `df['col'].str.pad(width=10, side='right', fillchar='0')` | `data |> mutate(new_col = str_pad(col, width = 10, side = 'right', pad = '0'))` |
+| **Truncate Strings**                  | `df['col'].str.slice(0, 10)`           | `data |> mutate(new_col = str_sub(col, 1, 10))` |
+| **Title Case**                        | -                                      | `data |> mutate(new_col = str_to_title(col))` |
+| **Join List of Strings**              | `'separator'.join(df['col'])`          | `data |> mutate(new_col = str_flatten(col, collapse = 'separator'))` |
+| **Remove Punctuation**                | -                                      | `data |> mutate(new_col = str_remove_all(col, '[[:punct:]]'))` |
+| **String Encoding/Decoding**          | -                                      | `data |> mutate(new_col = str_encode(col, to = 'UTF-8'))` |
 
