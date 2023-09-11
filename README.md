@@ -7,6 +7,7 @@ This is just a start. **Please feel free to directly contribute or revise via pu
 
 ## Table of Contents
 - [Key tasks](#Key-tasks)
+- [Joining Data](#Joining-Data)
 - [Iteration](#Iteration)
 - [Iteration Over Lists](#Iteration-Over-Lists)
 - [String Operations](#String-Operations)
@@ -39,6 +40,25 @@ This is just a start. **Please feel free to directly contribute or revise via pu
 | **Missing Data Handling**| `df.dropna()`                        | `data %>% drop_na()`              |
 | **Rename Columns**      | `df.rename(columns={'old_col': 'new_col'})` | `data %>% rename(new_col = old_col)` |
 | **Summary Statistics**  | `df.describe()`                      | `data %>% summary()`              |
+
+## Joining Data
+
+This is the only table that includes SQL given that most of the R/`dplyr` operations were patterns and named after many SQL operations.
+
+| Join Type       | SQL                                      | Python (Pandas)                         | R (dplyr)                              |
+|-----------------|------------------------------------------|----------------------------------------|----------------------------------------|
+| **Inner Join**  | `INNER JOIN`                             | `pd.merge(df1, df2, on='key')`         | `inner_join(df1, df2, by='key')`       |
+| **Left Join**   | `LEFT JOIN`                              | `pd.merge(df1, df2, on='key', how='left')` | `left_join(df1, df2, by='key')`        |
+| **Right Join**  | `RIGHT JOIN`                             | `pd.merge(df1, df2, on='key', how='right')` | `right_join(df1, df2, by='key')`       |
+| **Full Outer Join** | `FULL OUTER JOIN`                      | `pd.merge(df1, df2, on='key', how='outer')` | `full_join(df1, df2, by='key')`         |
+| **Cross Join**  | `CROSS JOIN`                             | `pd.merge(df1, df2, how='cross')`       | Not directly supported, but can be achieved with `full_join` and filtering |
+| **Anti Join**   | Not directly supported                   | `pd.merge(df1, df2, on='key', how='left', indicator=True).query('_merge == "left_only"').drop('_merge', axis=1)` | Not directly supported, but can be achieved with `anti_join` function from dplyr or by using `filter()` and `!` condition |
+| **Semi Join**   | Not directly supported                   | `pd.merge(df1, df2, on='key', how='inner', indicator=True).query('_merge == "both"').drop('_merge', axis=1)` | Not directly supported, but can be achieved with `semi_join` function from dplyr or by using `filter()` and `!` condition |
+| **Self Join**   | `INNER JOIN` with the same table         | `pd.merge(df, df, on='key')`            | `inner_join(df, df, by='key')`          |
+| **Multiple Key Join** | `INNER JOIN` with multiple keys     | `pd.merge(df1, df2, on=['key1', 'key2'])` | `inner_join(df1, df2, by=c('key1', 'key2'))` |
+| **Join with Renamed Columns** | `INNER JOIN` with renamed columns | `pd.merge(df1.rename(columns={'col1': 'key'}), df2, on='key')` | `inner_join(rename(df1, key = col1), df2, by = 'key')` |
+| **Join with Complex Condition** | `INNER JOIN` with complex conditions | `pd.merge(df1, df2, on='key', how='inner', left_on=(df1['col1'] > 10) & (df1['col2'] == df2['col3']))` | Not directly supported, but can be achieved with `filter()` and complex conditions |
+| **Join with Different Key Names** | `INNER JOIN` with different key names | `pd.merge(df1, df2, left_on='key1', right_on='key2')` | `inner_join(df1, df2, by = c('key1' = 'key2'))` |
 
 ## Iteration
 
