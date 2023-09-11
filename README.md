@@ -1,6 +1,8 @@
 # From Python to Tidy R (and Back)
 **A Running List of Key Python Operations Translated to (Mostly) Tidy R**
 
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fpdwaggoner%2Fpython-to-tidy-R&label=Visitors&countColor=%232ccce4&style=plastic)
+
 Frequently I am writing code in Python and R. And my team relies heavily on the [Tidyverse](https://www.tidyverse.org/) syntax. So, I am often translating key Python operations (pandas, matplotlib, etc.) to tidy R (dplyr, ggplot2, etc.). In an effort to ease that translation, and also to crowdsource a running directory of these translations, I created this repo. 
 
 This is just a start. **Please feel free to directly contribute or revise via pulls or issues**. Thanks!
