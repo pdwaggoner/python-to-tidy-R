@@ -35,7 +35,7 @@ In this example, we create a Dask array with random numbers, calculate the mean 
 
 ## In R
 
-In R, the closest equivalent to the parallel computing library for Python, `dask`, is the `future` package, though there are som other options listed below. 
+In R, the closest equivalent to the parallel computing library for Python, `dask`, is the `future` package, though there are some other options listed below. 
 
 1. **future**: The `future` package in R allows you to write code that can be evaluated asynchronously in the background. It provides a high-level API for parallel and distributed computing. You can use it to parallelize operations on data frames, lists, or other data structures.
 
