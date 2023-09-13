@@ -5,9 +5,9 @@
 
 Frequently I am writing code in Python and R. And my team relies heavily on the [Tidyverse](https://www.tidyverse.org/) syntax. So, I am often translating key Python operations (pandas, matplotlib, etc.) to tidy R (dplyr, ggplot2, etc.). In an effort to ease that translation, and also to crowdsource a running directory of these translations, I created this repo. 
 
-This is just a start. **Please feel free to directly contribute or revise via pulls or issues**. Thanks!
+This is just a start. **Please feel free to share and also directly contribute or revise via pulls or issues**.
 
-*Note:* I recommend using the native pipe operator (`|>`) when constructing piped operations, instead of the `magrittr` pipe (`%>%`). However, I used the latter in this repo because the `|` in the native R pipe threw off formatting of the markdown tables. 
+*Note:* I recommend using the native pipe operator (`|>`) when constructing piped operations in practice, instead of the `magrittr` pipe (`%>%`). However, I used the latter in this repo because the `|` in the native R pipe threw off formatting of the markdown tables. 
 
 ## Table of Contents
 - [Key tasks](#Key-tasks)
