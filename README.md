@@ -7,7 +7,7 @@ Frequently I am writing code in Python and R. And my team relies heavily on the 
 
 This is just a start. **Please feel free to directly contribute or revise via pulls or issues**. Thanks!
 
-*Note:* I recommend using the native pipe operator (`|>`) when constructing piped operations, instead of the `magrittr` pipe (`%>%`). 
+*Note:* I recommend using the native pipe operator (`|>`) when constructing piped operations, instead of the `magrittr` pipe (`%>%`). However, I used the latter in this repo because the `|` in the native R pipe threw off formatting of the markdown tables. 
 
 ## Table of Contents
 - [Key tasks](#Key-tasks)
