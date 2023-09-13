@@ -7,6 +7,8 @@ Frequently I am writing code in Python and R. And my team relies heavily on the 
 
 This is just a start. **Please feel free to directly contribute or revise via pulls or issues**. Thanks!
 
+*Note:* I recommend using the native pipe operator (`|>`) when constructing piped operations, instead of the `magrittr` pipe (`%>%`). 
+
 ## Table of Contents
 - [Key tasks](#Key-tasks)
 - [Joining Data](#Joining-Data)
