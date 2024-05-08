@@ -43,7 +43,7 @@ This is just a start. **Please feel free to share and also directly contribute o
 | **Date and Time**      | `pd.to_datetime(df['date_col'])`    | `data %>% mutate(date_col = as.Date(date_col))` |
 | **Missing Data Handling**| `df.dropna()`                        | `data %>% drop_na()`              |
 | **Rename Columns**      | `df.rename(columns={'old_col': 'new_col'})` | `data %>% rename(new_col = old_col)` |
-| **Summary Statistics**  | `df.describe()`                      | `data %>% summary()`              |
+| **Summary Statistics**  | `df.describe()`                      | `data %>% summary()` or `data %>% glimpse()`              |
 
 ## Joining Data
 
